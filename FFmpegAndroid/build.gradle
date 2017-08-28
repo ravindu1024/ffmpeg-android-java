@@ -33,11 +33,15 @@ android {
             sourceSets.main {
                 assets.srcDirs = ['assets_arm']
             }
+            versionCode 100
+            versionName "1.0.1"
         }
         x86 {
             sourceSets.main {
                 assets.srcDirs = ['assets_x86']
             }
+            versionCode 200
+            versionName "2.0.1"
         }
     }
 }
