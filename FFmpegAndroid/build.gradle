@@ -15,7 +15,7 @@ android {
     }
 
     sourceSets.main {
-        assets.srcDirs = ['assets']
+        //assets.srcDirs = ['assets']
         jni.srcDirs = [] //disable automatic ndk-build
         jniLibs.srcDirs = ['libs']
     }
@@ -24,6 +24,20 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    publishNonDefault true
+    productFlavors {
+        arm {
+            sourceSets.main {
+                assets.srcDirs = ['assets_arm']
+            }
+        }
+        x86 {
+            sourceSets.main {
+                assets.srcDirs = ['assets_x86']
+            }
         }
     }
 }
